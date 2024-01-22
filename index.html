@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Calculadora</title>
+</head>
+<body class="bg-teal-950 flex h-screen justify-center items-center text-white font-mono">
+    <div class="bg-sky-600 p-5 rounded-lg shadow-[0_8px_#075985]">
+        <div class="bg-teal-900 shadow-[0_4px_rgba(0,0,0,.3)_inset] rounded mb-4 relative min-h-16">
+            <span class="absolute right-0 top-0 px-2 py-1" id="lil-screen"></span>
+            <p class="text-right text-2xl p-2 absolute bottom-0 right-0" id="screen"></p>
+        </div>
+        <div class="text-2xl font-bold">
+            <ul class="flex">
+                <li data-button="C" class="w-8 h-8 flex items-center justify-center bg-cyan-600 shadow-[0_4px_#0e7490] hover:shadow-none p-6 m-1.5 rounded-xl hover:translate-y-1 transition-all">C</li>
+                <li data-button="%" class="w-8 h-8 flex items-center justify-center bg-cyan-600 shadow-[0_4px_#0e7490] hover:shadow-none p-6 m-1.5 rounded-xl hover:translate-y-1 transition-all">%</li>
+                <li data-button="<" class="w-8 h-8 flex items-center justify-center bg-cyan-600 shadow-[0_4px_#0e7490] hover:shadow-none p-6 m-1.5 rounded-xl hover:translate-y-1 transition-all">&#60;</li>
+                <li data-button="+" class="w-8 h-8 flex items-center justify-center bg-cyan-800 shadow-[0_4px_#164e63] hover:shadow-none p-6 m-1.5 rounded-xl hover:translate-y-1 transition-all">+</li>
+            </ul>
+            <ul class="flex">
+                <li data-button="7" class="w-8 h-8 flex items-center justify-center bg-sky-300 shadow-[0_4px_#0369a1] hover:shadow-none p-6 m-1.5 rounded-xl hover:translate-y-1 transition-all">7</li>
+                <li data-button="8" class="w-8 h-8 flex items-center justify-center bg-sky-300 shadow-[0_4px_#0369a1] hover:shadow-none p-6 m-1.5 rounded-xl hover:translate-y-1 transition-all">8</li>
+                <li data-button="9" class="w-8 h-8 flex items-center justify-center bg-sky-300 shadow-[0_4px_#0369a1] hover:shadow-none p-6 m-1.5 rounded-xl hover:translate-y-1 transition-all">9</li>
+                <li data-button="-" class="w-8 h-8 flex items-center justify-center bg-cyan-800 shadow-[0_4px_#164e63] hover:shadow-none p-6 m-1.5 rounded-xl hover:translate-y-1 transition-all">-</li>
+            </ul>
+            <ul class="flex">
+                <li data-button="4" class="w-8 h-8 flex items-center justify-center bg-sky-300 shadow-[0_4px_#0369a1] hover:shadow-none p-6 m-1.5 rounded-xl hover:translate-y-1 transition-all">4</li>
+                <li data-button="5" class="w-8 h-8 flex items-center justify-center bg-sky-300 shadow-[0_4px_#0369a1] hover:shadow-none p-6 m-1.5 rounded-xl hover:translate-y-1 transition-all">5</li>
+                <li data-button="6" class="w-8 h-8 flex items-center justify-center bg-sky-300 shadow-[0_4px_#0369a1] hover:shadow-none p-6 m-1.5 rounded-xl hover:translate-y-1 transition-all">6</li>
+                <li data-button="*" class="w-8 h-8 flex items-center justify-center bg-cyan-800 shadow-[0_4px_#164e63] hover:shadow-none p-6 m-1.5 rounded-xl hover:translate-y-1 transition-all">*</li>
+            </ul>
+            <ul class="flex">
+                <li data-button="1" class="w-8 h-8 flex items-center justify-center bg-sky-300 shadow-[0_4px_#0369a1] hover:shadow-none p-6 m-1.5 rounded-xl hover:translate-y-1 transition-all">1</li>
+                <li data-button="2" class="w-8 h-8 flex items-center justify-center bg-sky-300 shadow-[0_4px_#0369a1] hover:shadow-none p-6 m-1.5 rounded-xl hover:translate-y-1 transition-all">2</li>
+                <li data-button="3" class="w-8 h-8 flex items-center justify-center bg-sky-300 shadow-[0_4px_#0369a1] hover:shadow-none p-6 m-1.5 rounded-xl hover:translate-y-1 transition-all">3</li>
+                <li data-button="/" class="w-8 h-8 flex items-center justify-center bg-cyan-800 shadow-[0_4px_#164e63] hover:shadow-none p-6 m-1.5 rounded-xl hover:translate-y-1 transition-all">/</li>
+            </ul>
+            <ul class="flex">
+                <li data-button="+/-" class="w-8 h-8 flex items-center justify-center bg-sky-300 shadow-[0_4px_#0369a1] hover:shadow-none p-6 m-1.5 rounded-xl hover:translate-y-1 transition-all">±</li>
+                <li data-button="0" class="w-8 h-8 flex items-center justify-center bg-sky-300 shadow-[0_4px_#0369a1] hover:shadow-none p-6 m-1.5 rounded-xl hover:translate-y-1 transition-all">0</li>
+                <li data-button="." class="w-8 h-8 flex items-center justify-center bg-sky-300 shadow-[0_4px_#0369a1] hover:shadow-none p-6 m-1.5 rounded-xl hover:translate-y-1 transition-all">.</li>
+                <li data-button="=" class="w-8 h-8 flex items-center justify-center bg-cyan-600 shadow-[0_4px_#0e7490] hover:shadow-none p-6 m-1.5 rounded-xl hover:translate-y-1 transition-all">=</li>
+            </ul>
+        </div>
+    </div>
+    <script src="./main.js"></script>
+</body>
+</html>
